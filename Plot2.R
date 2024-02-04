@@ -5,7 +5,7 @@ datetime <- strptime(paste(epower$Date, epower$Time, sep=" "), "%d/%m/%Y %H:%M:%
 epower <- cbind(epower, datetime)
 # Adding the newly formed variable "datetime" to epower as a new column.
 epower$Date <- as.Date(epower$Date, format="%d/%m/%Y")
-# Changes the format of "Date" & "Time" column to desired format "ddmmyyyy" ,"H:M:S" and save it in the same column "Date" & "Time" Respectively.
+# Changes the format of "Date" column to desired format "ddmmyyyy" and save it in the same column "Date".
 subepower <- subset(epower, Date == "2007-02-01" | Date =="2007-02-02")
 # Creates the required subset by using date as a constraint in a new variable named "subepower"
 subepower$Global_active_power <- as.numeric(subepower$Global_active_power)
